@@ -4,15 +4,36 @@
  * 1 and 2, the first 10 terms will be:
  *
  * 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+ *
  * By considering the terms in the Fibonacci sequence
  * whose values do not exceed four million, find the
  * sum of the even-valued terms.
  */
 export function sum_even_fibonnaci_numbers(max = 4_000_000): number {
-  return fib_less_than(max).filter(is_even).reduce(add, 0);
+  // We want to take all of the fibonnaci numbers below our target
+  return fib_less_than(max)
+  // Filter them to remove any values that aren't even
+    .filter(is_even)
+  // and them sum them together.
+    .reduce(add, 0);
 }
 
-/** Memoize a function such that it locally caches results */
+/**
+ * Memoize a function such that it locally caches results
+ *
+ * This is a kind of metafunction, or function that creates functions.
+ * In this case, we're transforming a function without a cache into
+ * a function WITH a cache, which is pretty powerful in cases where we
+ * know we're unlikely to need a complex cache.
+ *
+ * In the example presented here, I'm using it over the pure functions
+ * `fib` and `fib_less_than` to produce functions that dramatically
+ * reduce their complexity when called multiple times.
+ *
+ * @param { (arg0: T) => U } fn A function to transform
+ *
+ * @return { (arg0: T) => U } Returns a memoized function
+ */
 const memoize_one = <T, U>(fn: (arg0: T) => U) => {
   const results: { [key: string]: U } = {};
 
