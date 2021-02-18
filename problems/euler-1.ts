@@ -32,7 +32,7 @@ const is_any_multiple_of = (divisors: number[]) => (n: number): boolean =>
  */
 export function find_even_multiples(
   divisors: number[] = [3, 5],
-  max_value: number = 1000
+  max_value = 1000
 ): number {
   let sum = 0;
 
@@ -49,4 +49,5 @@ export function find_even_multiples(
   return sum;
 }
 
-export const find_multiples_of_three_or_five = find_even_multiples;
+export const find_multiples_of_three_or_five = (max_value = 1000): number =>
+  find_even_multiples([3, 5], max_value);
