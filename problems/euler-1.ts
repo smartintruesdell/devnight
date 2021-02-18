@@ -32,10 +32,10 @@ const is_any_multiple_of = (divisors: number[]) => (n:number):boolean =>
  * @returns { number } Returns the sum of all matching values.
  */
 export function find_even_multiples(
-    divisors:number[] = [3,5],
-    max_value:number = 1000
-):number {
-    let sum = 0;
+  divisors: number[] = [3, 5],
+  max_value = 1000
+): number {
+  let sum = 0;
 
     // For each number in our set from 0 to max_value...
     for (let i = 0; i < max_value; i += 1) {
@@ -50,4 +50,5 @@ export function find_even_multiples(
     return sum;
 }
 
-export const find_multiples_of_three_or_five = find_even_multiples;
+export const find_multiples_of_three_or_five = (max_value = 1000): number =>
+  find_even_multiples([3, 5], max_value);

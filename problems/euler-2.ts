@@ -8,22 +8,20 @@
  * whose values do not exceed four million, find the
  * sum of the even-valued terms.
  */
-export function sum_even_fibonnaci_numbers(
-  max:number = 4_000_000
-):number {
+export function sum_even_fibonnaci_numbers(max = 4_000_000): number {
   return fib_less_than(max).filter(is_even).reduce(add, 0);
 }
 
 /** Memoize a function such that it locally caches results */
-const memoize = <T>(fn: (...args: any[]) => T) => {
-  const results: { [key:string]: T } = {};
+const memoize_one = <T, U>(fn: (arg0: T) => U) => {
+  const results: { [key: string]: U } = {};
 
-  return (...args:any[]):T => {
-      const key = args.toString();
+  return (arg0: T): U => {
+    const key = `${arg0}`;
 
-      if (!Object.hasOwnProperty.call(results, key)) {
-          results[key] = fn.apply(undefined, args);
-      }
+    if (!Object.hasOwnProperty.call(results, key)) {
+      results[key] = fn(arg0);
+    }
 
       return results[key];
   }
@@ -33,10 +31,10 @@ const memoize = <T>(fn: (...args: any[]) => T) => {
 const fib = (n:number):number => n <= 0 ? 0 : n === 1 ? 1 : fib(n-1) + fib(n-2);
 
 /** A memoized(cached) optimization of `fib` */
-const fib_memo = memoize(fib);
+const fib_memo = memoize_one(fib);
 
 /** Generates the list of fibonnaci numbers below some threshold */
-const fib_less_than = memoize((max:number):number[] => {
+const fib_less_than = memoize_one((max: number): number[] => {
   const results = [];
   let last = 0;
   let i = 0;
