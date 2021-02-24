@@ -12,7 +12,21 @@
  * Find the product abc.
  */
 export function product_of_pythagorean_triplet(target_num = 1000): number {
-  // TODO
-
-  throw new Error('Not Yet Implemented');
+  let i = 1;
+  let j = 2;
+  let k = Math.sqrt(i*i + j*j);
+  let sum = i+j+k;
+  let product = i*j*k;
+  while(sum != target_num) {
+    if(sum > target_num) {
+      i += 1;
+      j = i+1;
+    } else {
+      j +=1
+    }
+    k = Math.sqrt(i*i + j*j);
+    sum = i + j + k;
+  }
+  product = i*j*k;
+  return product;
 }
