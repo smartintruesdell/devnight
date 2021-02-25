@@ -1,17 +1,19 @@
 /**
  * From https://projecteuler.net/
- * 
- * If we list all the natural numbers below 10 that are 
- * multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of 
+ *
+ * If we list all the natural numbers below 10 that are
+ * multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of
  * these multiples is 23.
- * 
+ *
  * Find the sum of all the multiples of 3 or 5 below 1000.
  */
+export const find_multiples_of_three_or_five = (max_value = 1000): number =>
+  find_multiples_of([3, 5], max_value);
 
-export function find_multiples_of_three_or_five(
-  multiples_of:number[] = [3,5],
-  max_value:number = 1000
-):number {
+export function find_multiples_of(
+  multiples_of: number[] = [3, 5],
+  max_value = 1000
+): number {
   let sum = 0;
 
   // For each number in our set from 0 to max_value...
@@ -26,5 +28,6 @@ export function find_multiples_of_three_or_five(
       }
     }
   }
+
   return sum;
 }
