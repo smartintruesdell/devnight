@@ -4,6 +4,9 @@
  * Given an object with string keys, return a new object where the keys have
  * their letters reversed.
  *
+ * For an added challenge, let's require that the input object NOT be mutated
+ * by the solution.
+ *
  * ### Example
  * const inputObject = {
  *   first: undefined,
@@ -12,7 +15,7 @@
  * };
  *
  * const result = fillWithReversedKeys(inputObject);
- * expect(result).toBe({
+ * expect(result).toStrictEqual({
  *   first: 'tsrif',
  *   second: 'dnoces',
  *   third: 'driht'

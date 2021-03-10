@@ -18,6 +18,20 @@ describe('fillWithReversedKeys', () => {
       ],
     ])('fillWithReversedKeys(%p) -> %p', (inputObject, expected) =>
       expect(fillWithReversedKeys(inputObject)).toStrictEqual(expected)
-    );
+      );
+
+    test('fillWithReversedKeys does NOT mutate the original object', () => {
+      // given
+      const inputObject = {
+        trouper: undefined
+      };
+
+      // when
+      const result = fillWithReversedKeys(inputObject);
+
+      // then
+      expect(result).toStrictEqual({ trouper: 'repuort' });
+      expect(inputObject).not.toStrictEqual(result);
+    });
   });
 });
