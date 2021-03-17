@@ -21,10 +21,12 @@
  *   third: 'driht'
  * });
  */
-
 interface InputObjectShape { [key:string]: undefined };
 interface OutputObjectShape { [key:string]: string };
 
 export function fillWithReversedKeys(obj:InputObjectShape):OutputObjectShape {
-  return {};
+  return Object.keys(obj).reduce((acc, key) => {
+    acc[key] = key.split('').reverse().join('');
+    return acc;
+  }, {} as OutputObjectShape);
 }
