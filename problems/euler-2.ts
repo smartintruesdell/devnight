@@ -44,12 +44,13 @@ const memoize_one = <T, U>(fn: (arg0: T) => U) => {
       results[key] = fn(arg0);
     }
 
-      return results[key];
-  }
+    return results[key];
+  };
 };
 
 /** A recursive generalization of the fibonnaci number of n */
-const fib = (n:number):number => n <= 0 ? 0 : n === 1 ? 1 : fib(n-1) + fib(n-2);
+const fib = (n: number): number =>
+  n <= 0 ? 0 : n === 1 ? 1 : fib(n - 1) + fib(n - 2);
 
 /** A memoized(cached) optimization of `fib` */
 const fib_memo = memoize_one(fib);
@@ -61,15 +62,15 @@ const fib_less_than = memoize_one((max: number): number[] => {
   let i = 0;
 
   while (last <= max) {
-      last = fib_memo(i++);
-      results.push(last);
+    last = fib_memo(i++);
+    results.push(last);
   }
 
   return results;
 });
 
 /** Simple generalization over the + operator */
-const add = (a:number, b:number):number => a+b;
+const add = (a: number, b: number): number => a + b;
 
 /** Predicate to determine if a number is even */
-const is_even = (n:number):boolean => n === 0 ? false : n%2 === 0;
+const is_even = (n: number): boolean => (n === 0 ? false : n % 2 === 0);
