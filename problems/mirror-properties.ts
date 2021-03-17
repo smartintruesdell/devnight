@@ -22,9 +22,40 @@
  * });
  */
 
+<<<<<<< HEAD
+=======
+ const inputObject: any = {
+  first: undefined,
+  second: undefined,
+  third: undefined
+};
+
+export function reverseString(string: string) {
+  return string.split("").reverse().join("");
+}
+
+export function outputObject(inputObject: object) {
+  const outputObj = Object.keys(inputObject).reduce(
+    (newObj: any, key) => {
+      newObj[key] = reverseString(key);
+      return newObj;
+    },
+    {}
+  );
+  return outputObj;
+};
+
+console.log(outputObject(inputObject));
+
+
+>>>>>>> 96ff92d (mirror-properties.ts solution, still need to create spec for it.)
 interface InputObjectShape { [key:string]: undefined };
 interface OutputObjectShape { [key:string]: string };
 
 export function fillWithReversedKeys(obj:InputObjectShape):OutputObjectShape {
   return {};
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 96ff92d (mirror-properties.ts solution, still need to create spec for it.)
