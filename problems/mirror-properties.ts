@@ -22,8 +22,6 @@
  * });
  */
 
-<<<<<<< HEAD
-=======
  const inputObject: any = {
   first: undefined,
   second: undefined,
@@ -48,14 +46,9 @@ export function outputObject(inputObject: object) {
 console.log(outputObject(inputObject));
 
 
->>>>>>> 96ff92d (mirror-properties.ts solution, still need to create spec for it.)
 interface InputObjectShape { [key:string]: undefined };
 interface OutputObjectShape { [key:string]: string };
 
 export function fillWithReversedKeys(obj:InputObjectShape):OutputObjectShape {
   return {};
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 96ff92d (mirror-properties.ts solution, still need to create spec for it.)
