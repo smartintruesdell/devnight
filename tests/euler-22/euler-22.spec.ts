@@ -21,16 +21,23 @@ describe('euler-22', () => {
       const testFilePath = testPath + 'some-names.txt';
 
       return readNamesFile(testFilePath).then((result) => {
-        expect(result).toBe('"SUSIE","JASON","CORA","LIAM","ALEXANDRA","SHAWN","SEBASTIAN"');
-        //Question for Shawn: Was extra line on some-names.txt intentional? (I removed it and this test passed, so probably good to have the test/code be smart enough to handle extra spaces or lines but that will have to be another night.)
+        expect(result).toBe(
+          '"SUSIE","JASON","CORA","LIAM","ALEXANDRA","SHAWN","SEBASTIAN"'
+        );
       });
     });
 
     // Synchronous tests
-    test('splitNamesInFileToArray', () => {
-      const names = '"This","was","a","string"';
+    test.each([
+      ['"This","was","a","string"', ['This', 'was', 'a', 'string']],
+      [
+        `"Colin"
+      `,
+        ['Colin'],
+      ],
+    ])('splitNamesInFileToArray(%p) -> (%p)', (names, expected) => {
       const result = splitNamesInFileToArray(names);
-      expect(result).toStrictEqual(['This', 'was', 'a','string']);
+      expect(result).toStrictEqual(expected);
     });
 
     test('getNumericalValueOfLetter', () => {

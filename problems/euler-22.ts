@@ -23,7 +23,7 @@ export function readNamesFile(path: string): Promise<string> {
  * of discreet names.
  */
 export function splitNamesInFileToArray(names: string): string[] {
-  return names.replace(/"|\n/g, '').split(',');
+  return names.replace(/"|\n|\s/g, '').split(',');
 }
 
 /** Sort an array alphabetically (default) */
@@ -60,14 +60,17 @@ export const LETTER_VALUES: LetterValueLookup = [
   'X',
   'Y',
   'Z',
-].reduce((acc: LetterValueLookup, letter: string, i: number) => {
-  // Reduce from *many* letters to *one* LetterValueMap
-  // by assigning the value of LetterValueMap[letter] to the index of the letter
-  // plus one:
-  acc[letter] = i + 1;
+].reduce(
+  (acc: LetterValueLookup, letter: string, i: number) => {
+    // Reduce from *many* letters to *one* LetterValueMap
+    // by assigning the value of LetterValueMap[letter] to the index of the letter
+    // plus one:
+    acc[letter] = i + 1;
 
-  return acc;
-}, {} as LetterValueLookup);
+    return acc;
+  },
+  { ' ': 0 } as LetterValueLookup
+);
 
 /** Given a letter, uses the `LETTER_VALUES` lookup table to return a value */
 export function getNumericalValueOfLetter(letter: string): number {
