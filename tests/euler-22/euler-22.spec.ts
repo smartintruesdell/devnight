@@ -6,6 +6,8 @@ import {
   splitNamesInFileToArray,
   getNumericalValueOfLetter,
   getAlphabeticalValueOfName,
+  LetterValueLookup,
+  LETTER_VALUES,
   // Solution
   euler22,
 } from '../../problems/euler-22';
