@@ -1,0 +1,175 @@
+#+title: Secret Project Brainstorming
+
+* Goals
+
+** Reach Profitability Early
+:PROPERTIES:
+:Priority: Medium
+:END:
+
+Current plan does not include venture capital, may need to investigate that option as we approach product viability.
+
+Try to develop a product with a revenue stream in mind.
+
+** Keep the Team Small
+:PROPERTIES:
+:Priority: Medium
+:END:
+
+2-7 people to start.
+
+** Leverage Our Expertise
+:PROPERTIES:
+:Priority: Essential
+:END:
+
+*** Jason
+
+- Systems Architecture
+  - Server Administration
+  - Network Administration
+  - Oracle Tech Stack (yuck)
+- Technologist(tm)
+- Tech Evangelism
+
+*** Shawn
+
+- Software Engineering
+  - Javascript/Typescript
+  - Java/C++
+  - Rust
+- User Experience
+- Art/Graphic Design
+- Project Management
+  - Scrum (:P)
+  - Sr. Design work w/Microsoft, Amazon, games
+
+** Work Light until we can leave other employment
+:PROPERTIES:
+:Priority: Essential
+:END:
+
+- Project should be something we can work on (slowly) over the next few years to establish a product without disrupting our MASYC work.
+
+* High-Level Ideas
+
+** Bespoke Systems Integrations (consulting)
+
+*** Pros:
+- Easy to find an available domain where the market is not saturated
+- Paychecks are potentially large
+- Work is potentially small
+
+*** Cons:
+- Hard to differentiate company from competition
+- Business is tightly coupled to availability of client work
+
+** Something-As-A-Service
+
+*** Pros:
+- Reliable revenue stream
+- Scalable
+- Easy to get Purchased by Google/Amazon/Microsoft
+
+*** Cons:
+- Hard to find an available domain where the market is not saturated
+- Complex to build a product
+- Paychecks are very small
+
+** Integrations-As-A-Service
+
+*** Pros:
+- Aligns multiple earlier ideas
+- Consistent paychecks if you can get clients away from competitors
+
+*** Cons:
+- Mulesoft exists
+- Need to be Cheaper+Simpler
+
+** Lowcode Tools for Sysadmins
+
+*** "Systems Glue"
+
+**** Data
+
+**** Analytics
+
+**** Event Orchestration
+***** Log Parsing / Response
+***** Rules engine?
+
+** ERP 4 Salesforce
+
+*** Pros:
+- Big market
+- Lots of people are already drinking the Salesforce Kool-Aid
+
+*** Cons:
+- Hueg like XBox, Probably out of scope for 2 guys
+- Need to identify what the Minimum Viable Product really is.
+** Blockchain Invoice Validation
+
+Centralized cloud database tracking blockchain
+
+AWS, Azure, and Google have Blockchain services now
+
+Build some kind of invoicing app/platform to make it simple for businesses to adopt "signed" blockchain-backed invoice tracking
+
+1. Build a virus to threaten digital invoices
+
+*** Pros:
+- Buzzwords
+
+*** Cons:
+- What is it?
+- ^^^ How to convince people to use it
+- What's the REAL value add?
+- How much is it WORTH
+
+** Building a Small Business... Software?
+Poppins Payroll as an example
+
+** Post-Covid New-World-Order Problem Solving
+What are the realities of work from home and the decentralized workforce that we can capitalize on.
+
+*** Tools to help collaboration
+
+This is a saturated space
+
+*** Tools to help teambuilding - that "in the office" feeling
+
+**** A Bot?
+
+***** HR Bot - answers your HR questions and ignores you when you complain about co-workers
+
+**** An... office party game? :|
+
+**** Gamify work?
+
+**** How to approximate "bumping into co-workers socially"
+
+*** No commute so I have less time for Podcasts
+
+*** Time entry app (that doesn't suck)
+
+**** Integrations to =systems=
+
+** Make an App
+
+*** Pros:
+- All the cool kids are doing it
+- Less intrusive than "yet another Skype I have to run"
+- Known access to essential features
+
+*** Cons:
+- All the cool kids are doing it
+
+*** Cross-Platform
+
+**** Electron for Desktop
+
+**** React Native for Mobile
+
+**** Application Logic in Typescript fits in either place
+
+**** Only have to rewrite UX/Rendering
