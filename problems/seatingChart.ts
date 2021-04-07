@@ -12,15 +12,15 @@
 import {
   readNamesFile,
   splitNamesInFileToArray
-} from '../problems/euler-22';
+} from './euler-22';
 
-export function seatingChart(names:string[]): string[][] {
+export function seatingChartDesign(names:string[]): string[][] {
   const twoDArray = [];
   while(names.length) twoDArray.push(names.splice(0,10));
   return twoDArray;
 }; 
 
-export const makeSeatingChart = (path): Promise<string[][]> =>
+export const seatingChart = (path): Promise<string[][]> =>
   readNamesFile(path)
     .then(splitNamesInFileToArray)
-    .then(seatingChart)
+    .then(seatingChartDesign)

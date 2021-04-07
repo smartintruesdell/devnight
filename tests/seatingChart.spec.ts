@@ -6,8 +6,8 @@ import {
   splitNamesInFileToArray,
 } from '../problems/euler-22';
 import { 
-  makeSeatingChart 
-} from '../problems/makeSeatingChart';
+  seatingChart 
+} from '../problems/seatingChart';
 
 const testPath = './tests/euler-22/';
 
@@ -45,7 +45,7 @@ describe('makeSeatingChart', () => {
       ['some-names.txt', [["SUSIE","JASON","CORA","LIAM","ALEXANDRA","SHAWN","SEBASTIAN"]]]
       //['p022_names.txt', "TBD"],
     ])('makeSeatingChart(%p) -> Promise<string[][]>{ %p }', (path, expected) => {
-      return makeSeatingChart(testPath + path).then((result) => {
+      return seatingChart(testPath + path).then((result) => {
         expect(result).toStrictEqual(expected);
       });
     });
